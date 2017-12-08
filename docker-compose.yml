@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  missingpets.site:
+    image: missingpets.site
+    build:
+      context: ./MissingPets.Site
+      dockerfile: Dockerfile
