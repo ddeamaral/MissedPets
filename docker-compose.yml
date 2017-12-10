@@ -6,3 +6,9 @@ services:
     build:
       context: ./MissingPets.Site
       dockerfile: Dockerfile
+
+  missingpets.api:
+    image: missingpets.api
+    build:
+      context: ./MissingPets.API
+      dockerfile: Dockerfile

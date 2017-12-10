@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingPets.Site", "Missing
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C2DD02DA-B474-44A8-8B6A-458779EFDB0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingPets.API", "MissingPets.API\MissingPets.API.csproj", "{EFE9CC4E-8C31-4DC2-ACFA-3355AC7598DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingPets.Tests", "MissingPets.Tests\MissingPets.Tests.csproj", "{9581C39F-3403-4E82-8F84-A759B5BCF76B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{C2DD02DA-B474-44A8-8B6A-458779EFDB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2DD02DA-B474-44A8-8B6A-458779EFDB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2DD02DA-B474-44A8-8B6A-458779EFDB0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFE9CC4E-8C31-4DC2-ACFA-3355AC7598DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFE9CC4E-8C31-4DC2-ACFA-3355AC7598DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFE9CC4E-8C31-4DC2-ACFA-3355AC7598DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFE9CC4E-8C31-4DC2-ACFA-3355AC7598DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9581C39F-3403-4E82-8F84-A759B5BCF76B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9581C39F-3403-4E82-8F84-A759B5BCF76B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9581C39F-3403-4E82-8F84-A759B5BCF76B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9581C39F-3403-4E82-8F84-A759B5BCF76B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
