@@ -1,71 +1,296 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE HTML>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MissingPets.Site</title>
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MissedPet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="We help owners find their beloved companions." />
+    <meta name="keywords" content="pet finding service, find pets, pet finder, html5, css3, mobile first, responsive" />
+    <meta name="author" content="gettemplates.co, missedpets.com" />
+
+    <!--
+        Oxygen by gettemplates.co
+        Twitter: http://twitter.com/gettemplateco
+        URL: http://gettemplates.co
+    -->
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+
+    <environment names="Development">
+        <!-- <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'> -->
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="/css/animate.css">
+        <!-- Icomoon Icon Fonts-->
+        <link rel="stylesheet" href="/css/icomoon.css">
+        <!-- Bootstrap  -->
+        <link rel="stylesheet" href="/css/bootstrap.css">
+
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="/css/magnific-popup.css">
+
+        <!-- Owl Carousel  -->
+        <link rel="stylesheet" href="/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+
+        <!-- Theme style  -->
+        <link rel="stylesheet" href="/css/style.css">
     </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+
+
+
+   
+
+    <!-- Modernizr JS -->
+    <script src="/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">MissingPets.Site</a>
+
+    <div class="mp-loader"></div>
+
+    <div id="page">
+        <nav class="mp-nav" role="navigation">
+            <div class="mp-container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="mp-logo">
+                            <a href="index.html">MissedPet.</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-10 text-center menu-1">
+                        <ul>
+                            <li class="active">
+                                <a href="@Url.Action("Index", "Home")">Home</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("About","Home")">About</a>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="services.html">Services</a>
+                                <ul class="dropdown">
+                                    <li>
+                                        <a href="#">Find a pet!</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Report a found pet</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Branding</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">API</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">Tools</a>
+                                <ul class="dropdown">
+                                    <li>
+                                        <a href="#">HTML5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">CSS3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sass</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">jQuery</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Contact", "Home")">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    @*<div class="col-xs-2 text-right hidden-xs menu-2">
+                        <ul>
+                            <li class="btn-cta">
+                                <a href="#">
+                                    <span>Login</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>*@
+                </div>
+
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
+        </nav>
+
+            @RenderBody()
+
+        <footer id="mp-footer" role="contentinfo">
+            <div class="mp-container">
+                <div class="row row-pb-md">
+                    <div class="col-md-4 mp-widget">
+                        <h3>The Company</h3>
+                        <p>
+                            Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa
+                            amet.
+                        </p>
+                        <p>
+                            <a href="#">Learn More</a>
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                        <ul class="mp-footer-links">
+                            <li>
+                                <a href="@Url.Action("About", "Home")">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Help</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Contact","Contact")">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Meetups</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                        <ul class="mp-footer-links">
+                            <li>
+                                <a href="#">Shop</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Testimonials</a>
+                            </li>
+                            <li>
+                                <a href="#">Handbook</a>
+                            </li>
+                            <li>
+                                <a href="#">Held Desk</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                        <ul class="mp-footer-links">
+                            <li>
+                                <a href="#">Find Designers</a>
+                            </li>
+                            <li>
+                                <a href="#">Find Deelopers</a>
+                            </li>
+                            <li>
+                                <a href="#">Teams</a>
+                            </li>
+                            <li>
+                                <a href="#">Advertise</a>
+                            </li>
+                            <li>
+                                <a href="#">API</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row copyright">
+                    <div class="col-md-12">
+                        <p class="pull-left">
+                            <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
+                            <small class="block">
+                                Designed by
+                                <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images:
+                                <a href="http://unsplash.co/" target="_blank">Unsplash</a>
+                            </small>
+                        </p>
+                        <p class="pull-right">
+                            <ul class="mp-social-icons pull-right">
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-dribbble"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2017 - MissingPets.Site</p>
         </footer>
     </div>
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop">
+            <i class="icon-arrow-up"></i>
+        </a>
+    </div>
+
+    <environment names="Development">
+        <!-- jQuery -->
+        <script src="/js/jquery.min.js"></script>
+        <!-- jQuery Easing -->
+        <script src="/js/jquery.easing.1.3.js"></script>
+        <!-- Bootstrap -->
+        <script src="/js/bootstrap.min.js"></script>
+        <!-- Waypoints -->
+        <script src="/js/jquery.waypoints.min.js"></script>
+        <!-- Carousel -->
+        <script src="/js/owl.carousel.min.js"></script>
+        <!-- countTo -->
+        <script src="/js/jquery.countTo.js"></script>
+        <!-- Magnific Popup -->
+        <script src="/js/jquery.magnific-popup.min.js"></script>
+        <script src="/js/magnific-popup-options.js"></script>
+        <!-- Main -->
+       
     </environment>
 
-    @RenderSection("Scripts", required: false)
+    <environment names="Staging,Production">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" asp-fallback-src="/js/jquery.min.js" asp-fallback-test=""></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" asp-fallback-src="/js/jquery.easing.1.3.js" asp-fallback-test=""></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js" asp-fallback-src="/js/bootstrap.min.js" asp-fallback-test=""></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js" asp-fallback-src="/js/jquery.waypoints.min.js" asp-fallback-test=""></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js" asp-fallback-src="/js/owl.carousel.min.js" asp-fallback-test=""></script> @*Might be wrong*@
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.1.0/jquery.countTo.min.js" asp-fallback-src="/js/jquery.countTo.js" asp-fallback-test=""></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/0.9.9/jquery.magnific-popup.min.js" asp-fallback-src="/js/jquery.magnific-popup.min.js" asp-fallback-test=""></script>        
+    </environment>
+
+    <script src="/js/magnific-popup-options.js"></script>
+    <script src="/js/main.js"></script>
+    
+
 </body>
+
 </html>
