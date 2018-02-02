@@ -8,6 +8,19 @@ EXEC('CREATE SCHEMA Ref')
 END
 
 
+IF OBJECT_ID('Ref.PetType', 'U') IS NOT NULL 
+  DROP TABLE Ref.PetType; 
+
+
+Create Table Ref.PetType
+(
+	ID int not null primary key identity(1,1),
+	Label varchar(100) null,
+	Description varchar(max) not null,
+	CreatedDate datetime not null
+)
+
+
 IF OBJECT_ID('Ref.PetStatus', 'U') IS NOT NULL 
   DROP TABLE Ref.PetStatus; 
 
@@ -42,17 +55,18 @@ Create Table Ref.PetAttributeValues
 (
 	ID int not null primary key identity(1,1),
 	PetID int not null foreign key references PCS.Pet(ID),
+	PetAttributeType int not null foreign key references Ref.PetAttributeType(ID),
 	Label varchar(100) null,
 	Value varchar(max) not null,
 	CreatedDate datetime not null
 )
 
 
-IF OBJECT_ID('Ref.PetAttributeValuesDefault', 'U') IS NOT NULL 
-  DROP TABLE Ref.PetAttributeValuesDefault; 
+IF OBJECT_ID('Ref.PetAttributeType', 'U') IS NOT NULL 
+  DROP TABLE Ref.PetAttributeType; 
 
 
-Create Table Ref.PetAttributeValuesDefault
+Create Table Ref.PetAttributeType
 (
 	ID int not null primary key identity(1,1),
 	Label varchar(100) null,

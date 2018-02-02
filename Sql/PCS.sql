@@ -19,6 +19,7 @@ Create Table PCS.Pet
 	Name varchar(100) not null,
 	Breed varchar(200),
 	YearsOld int,	
+	PetTypeID int not null foreign key references Ref.PetType(ID),
 	Description varchar(max) null,
 	CreatedDate datetime not null,
 )
